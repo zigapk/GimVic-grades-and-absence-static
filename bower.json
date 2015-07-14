@@ -1,0 +1,19 @@
+{
+  "name": "GimVic-grades-and-abesnce-static",
+  "version": "0.0.0",
+  "homepage": "https://github.com/zigapk/GimVic-grades-and-abesnce-static",
+  "authors": [
+    "Ziga Patacko Koderman <ziga.patacko@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
