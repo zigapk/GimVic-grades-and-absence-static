@@ -20,6 +20,7 @@
     "paper-checkbox": "PolymerElements/paper-checkbox#~1.0.5",
     "paper-toggle-button": "PolymerElements/paper-toggle-button#~1.0.5",
     "paper-radio-group": "PolymerElements/paper-radio-group#~1.0.4",
-    "paper-radio-button": "PolymerElements/paper-radio-button#~1.0.5"
+    "paper-radio-button": "PolymerElements/paper-radio-button#~1.0.5",
+    "google-chart": "GoogleWebComponents/google-chart#~1.0.2"
   }
 }
