@@ -86,16 +86,26 @@ paper-toggle-button {
     display: flex;
     margin-top: 16px;
 }
-#stats-holder {
+#facts-holder {
     flex: 1;
     margin-right: 8px;
     height: 200px;
+    padding: 16px;
+}
+#stats-holder {
+    flex: 5;
+    margin-left: 8px;
 }
 #chart-holder {
-    flex: 3;
-    margin-left: 8px;
+    margin-top: 16px;
+    width: 100%;
+    margin-bottom: 64px;
 }
 #chart {
     height: 100%;
+    width: 90%;
+}
+.p-center {
     width: 100%;
+    text-align: center;
 }

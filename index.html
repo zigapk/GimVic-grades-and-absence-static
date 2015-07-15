@@ -77,16 +77,22 @@
         </div>
     </div>
     <div id="display-holder">
-        <div id="stats-holder" class="card"></div>
-        <div id="chart-holder" class="card">
-            <google-chart
-                    id="chart"
-                    type='pie'
-                    options='{"title": "Distribution of days in 2001Q1"}'
-                    cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
-                    rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
-            </google-chart>
+        <div id="facts-holder" class="card">
+            <p class="p-center">744 dijakov</p><br>
+            <p class="p-center">342 fantov</p><br>
+            <p class="p-center">402 deklet</p><br>
         </div>
+        <div id="stats-holder" class="card"></div>
+
+    </div>
+    <div id="chart-holder" class="card">
+        <google-chart
+                id="chart"
+                type='pie'
+                options='{"title": "Distribution of days in 2001Q1"}'
+                cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+                rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+        </google-chart>
     </div>
 </div>
 
