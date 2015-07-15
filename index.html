@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
+    <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
+
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+</head>
+<body class="fullbleed layout vertical">
+<paper-header-panel id="header-panel" class="flex">
+    <paper-toolbar id="toolbar">
+        <div>TITLE</div>
+    </paper-toolbar>
+</paper-header-panel>
+
+<div id="content">
+    <div id="filter-holder" class="card">
+        <div id="date-filter-holder"><br>DATE/YEAR PICKER<br></div>
+        <div id="ocene-filter-holder">
+            <p class="filter-label">Ocene:</p><br>
+            <paper-radio-group selected="small">
+                <paper-radio-button name="povprecni-uspeh" checked="true">Povprečna ocena</paper-radio-button>
+                <br>
+                <paper-radio-button name="zakljucni-uspeh">Zaključni uspeh</paper-radio-button>
+            </paper-radio-group>
+        </div>
+        <div id="izostanik-filter-holder">
+            <p class="filter-label">Izostanki:</p>
+            <div class="toggle-holder">
+                <paper-toggle-button checked="true"></paper-toggle-button>
+                <p class="toggle-label">Opravičeni</p>
+            </div>
+            <div class="toggle-holder">
+                <paper-toggle-button checked="true"></paper-toggle-button>
+                <p class="toggle-label">Neopravičeni</p>
+            </div>
+        </div>
+        <div id="letnik-filter-holder">
+            <p class="filter-label">Letnik:</p><br>
+            <paper-checkbox class="filter-checkbox" checked>1.</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>2.</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>3.</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>4.</paper-checkbox>
+        </div>
+        <div id="oddelek-filter-holder">
+            <p class="filter-label">Oddelek:</p><br>
+            <paper-checkbox class="filter-checkbox" checked>A</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>B</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>C</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>D</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>E</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>F</paper-checkbox>
+        </div>
+        <div id="spol-filter-holder">
+            <p class="filter-label">Spol:</p><br>
+            <paper-checkbox class="filter-checkbox" checked>Fantje</paper-checkbox>
+            <br>
+            <paper-checkbox class="filter-checkbox" checked>Dekleta</paper-checkbox>
+        </div>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
