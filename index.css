@@ -89,7 +89,7 @@ paper-toggle-button {
 #stats-holder {
     flex: 1;
     margin-right: 8px;
-    height: 300px;
+    height: 200px;
 }
 #chart-holder {
     flex: 3;
