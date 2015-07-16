@@ -105,7 +105,19 @@ paper-toggle-button {
     width: 100%;
     text-align: center;
 }
-#facts-holder-table {
+.p-right {
+    width: 100%;
+    text-align: right;
+}
+.p-left {
+    width: 100%;
+    text-align: left;
+}
+#facts-holder-table, #stats-holder-table {
     width: 100%;
     height: 100%;
+    table-layout:fixed;
+}
+tr {
+    line-height: 2px;
 }
