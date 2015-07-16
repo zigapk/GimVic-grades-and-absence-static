@@ -121,3 +121,15 @@ paper-toggle-button {
 tr {
     line-height: 2px;
 }
+#title-holder {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 30px;
+    color: white;
+}
+#subtitle-holder {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
