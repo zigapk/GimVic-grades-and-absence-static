@@ -17,6 +17,7 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 32px;
+    min-height: 830px;
 }
 #filter-holder {
     width: 100%;
@@ -83,9 +84,8 @@ paper-toggle-button {
     margin-top: 16px;
 }
 #facts-holder {
-    flex: 1;
+    flex: 2;
     margin-right: 8px;
-    height: 200px;
     padding: 16px;
 }
 #stats-holder {
@@ -104,4 +104,8 @@ paper-toggle-button {
 .p-center {
     width: 100%;
     text-align: center;
+}
+#facts-holder-table {
+    width: 100%;
+    height: 100%;
 }
