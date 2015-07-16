@@ -56,10 +56,6 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-.card {
-    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-    background: #fff;
-}
 .filter-label {
     flex: 1;
     margin: 0;
