@@ -7,6 +7,7 @@
     <link href="index.css" type="text/css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
     <link rel="import" href="bower_components/polymer/polymer.html">
     <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
@@ -15,7 +16,9 @@
     <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
     <link rel="import" href="bower_components/google-chart/google-chart.html">
     <link rel="import" href="bower_components/paper-material/paper-material.html">
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+
 </head>
 <body class="fullbleed layout vertical">
 <paper-header-panel id="header-panel" class="flex">
@@ -27,7 +30,9 @@
 
 <div id="content">
     <paper-material elevation="2" id="filter-holder">
-        <div id="date-filter-holder"><br>DATE/YEAR PICKER<br></div>
+        <div id="date-filter-holder">
+            <br>DATE/YEAR PICKER<br>
+        </div>
         <div id="ocene-filter-holder">
             <p class="filter-label">Ocene:</p><br>
             <paper-radio-group selected="small">
