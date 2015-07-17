@@ -22,7 +22,6 @@
     "paper-radio-group": "PolymerElements/paper-radio-group#~1.0.4",
     "paper-radio-button": "PolymerElements/paper-radio-button#~1.0.5",
     "google-chart": "GoogleWebComponents/google-chart#~1.0.2",
-    "paper-menu": "PolymerElements/paper-menu#~1.0.1",
-    "paper-item": "PolymerElements/paper-item#~1.0.2"
+    "paper-dialog": "PolymerElements/paper-dialog#~1.0.1"
   }
 }
