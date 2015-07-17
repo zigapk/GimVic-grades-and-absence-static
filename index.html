@@ -16,6 +16,7 @@
     <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
     <link rel="import" href="bower_components/google-chart/google-chart.html">
     <link rel="import" href="bower_components/paper-material/paper-material.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
 
 </head>
 <body class="fullbleed layout vertical">
@@ -29,7 +30,8 @@
 <div id="content">
     <paper-material elevation="2" id="filter-holder">
         <div id="date-filter-holder">
-            <br>DATE/YEAR PICKER<br>
+            <p class="p-center" id="date-indicator">Izbrano:<br>2012/13, 2013/14, 2014/15</p>
+            <paper-button raised id="date-chooser-button">Spremeni</paper-button>
         </div>
         <div id="ocene-filter-holder">
             <p class="filter-label">Ocene:</p><br>
@@ -83,6 +85,7 @@
     </paper-material>
     <div id="display-holder">
         <paper-material id="facts-holder" elevation="2">
+            <p class="p-center p-bold p-card-title">Vzorec:</p>
             <table id="facts-holder-table">
                 <tr>
                     <td><p class="p-center">Celoten:</p></td>
@@ -107,6 +110,7 @@
             </table>
         </paper-material>
         <paper-material id="stats-holder" elevation="2">
+            <p class="p-center p-bold p-card-title">Lastnosti:</p>
             <table id="stats-holder-table">
                 <tr>
                     <td><p class="p-right">Povprečna ocena ali uspeh:</p></td>

@@ -86,7 +86,6 @@ paper-toggle-button {
 #facts-holder {
     flex: 2;
     margin-right: 8px;
-    padding: 16px;
 }
 #stats-holder {
     flex: 5;
@@ -132,4 +131,17 @@ tr {
     width: 100%;
     text-align: center;
     color: white;
+}
+#date-chooser-button {
+    color: white;
+    background: #4285f4;
+    margin: 16px 0 0;
+    width: 100%;
+}
+.p-bold {
+    font-weight: bold;
+}
+.p-card-title {
+    height: 18px;
+    margin: 8px 0 0;
 }
