@@ -18,6 +18,7 @@
     <link rel="import" href="bower_components/paper-material/paper-material.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animation.html">
 
 </head>
 <body class="fullbleed layout vertical">
@@ -32,7 +33,21 @@
     <paper-material elevation="2" id="filter-holder">
         <div id="date-filter-holder">
             <p class="p-center" id="date-indicator">Izbrano:<br>2012/13, 2013/14, 2014/15</p>
-            <paper-button raised id="date-chooser-button" data-dialog="date-chooser-dialog">Spremeni</paper-button>
+            <section onclick="clickHandler(event)">
+                <paper-button raised id="date-chooser-button" data-dialog="date-chooser-dialog">Spremeni</paper-button>
+            </section>
+
+            <!--date chooser dialog -->
+            <paper-dialog id="date-chooser-dialog" entry-animation="scale-up-animation" modal exit-animation="fade-out-animation">
+                <h2>Header</h2>
+                <div>
+                    Lorem ipsum...
+                </div>
+                <div class="buttons">
+                    <paper-button dialog-dismiss>Prekliči</paper-button>
+                    <paper-button dialog-confirm>OK</paper-button>
+                </div>
+            </paper-dialog>
 
         </div>
         <div id="ocene-filter-holder">
@@ -45,6 +60,7 @@
         </div>
         <div id="izostanik-filter-holder">
             <p class="filter-label">Izostanki:</p>
+
             <div class="toggle-holder">
                 <paper-toggle-button checked="true"></paper-toggle-button>
                 <p class="toggle-label">Opravičeni</p>
@@ -155,5 +171,8 @@
 
 </div>
 
+
+
+<script src="index.js" type="text/javascript"></script>
 </body>
 </html>
