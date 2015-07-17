@@ -5,6 +5,8 @@ html, body {
 }
 #header-panel{
     height: 64px;
+    /*for Chrome:*/
+    min-height: 64px;
     background: #2196F3;
 }
 
@@ -147,6 +149,7 @@ tr {
     height: 18px;
     margin: 8px 0 0;
 }
+
 /*This will work for firefox*/
 @-moz-document url-prefix() {
     .toggle-label {
