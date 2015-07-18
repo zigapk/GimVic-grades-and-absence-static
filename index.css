@@ -120,7 +120,7 @@ paper-toggle-button {
     width: 100%;
     text-align: left;
 }
-#facts-holder-table, #stats-holder-table {
+#facts-holder-table, #stats-holder-table, #year-chooser-table {
     width: 100%;
     height: 100%;
     table-layout:fixed;
@@ -139,12 +139,6 @@ tr {
     width: 100%;
     text-align: center;
     color: white;
-}
-#date-chooser-button {
-    color: white;
-    background: #4285f4;
-    margin: 16px 0 0;
-    width: 100%;
 }
 .p-bold {
     font-weight: bold;

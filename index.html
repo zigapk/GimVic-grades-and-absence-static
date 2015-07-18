@@ -17,8 +17,6 @@
     <link rel="import" href="bower_components/google-chart/google-chart.html">
     <link rel="import" href="bower_components/paper-material/paper-material.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
-    <link rel="import" href="bower_components/neon-animation/neon-animation.html">
 
 </head>
 <body class="fullbleed layout vertical">
@@ -32,25 +30,17 @@
 <div id="content">
     <paper-material elevation="2" id="filter-holder">
         <div id="date-filter-holder">
-            <p class="p-center" id="date-indicator">Izbrano:<br>2012/13, 2013/14, 2014/15</p>
-            <section onclick="clickHandler(event)">
-                <paper-button raised id="date-chooser-button" data-dialog="date-chooser-dialog">Spremeni</paper-button>
-            </section>
-
-            <!--date chooser dialog -->
-            <paper-dialog id="date-chooser-dialog" entry-animation="scale-up-animation" modal exit-animation="fade-out-animation">
-                <h2>Izberite željena šolska leta:</h2>
-                <div id="years-menu-holder">
-                    <paper-menu multi>
-                        <paper-item>Item 1</paper-item>
-                        <paper-item>Item 2</paper-item>
-                    </paper-menu>
-                </div>
-                <div class="buttons">
-                    <paper-button dialog-dismiss>Prekliči</paper-button>
-                    <paper-button dialog-confirm>OK</paper-button>
-                </div>
-            </paper-dialog>
+            <p class="p-center" id="date-indicator">Izbrano:</p>
+            <table id="year-chooser-table">
+                <tr>
+                    <td><paper-button toggles raised active>2012/13</paper-button></td>
+                    <td><paper-button toggles raised active>2013/14</paper-button></td>
+                </tr>
+                <tr>
+                    <td><paper-button toggles raised active>2014/15</paper-button></td>
+                    <td><paper-button toggles raised active>2015/16</paper-button></td>
+                </tr>
+            </table>
 
         </div>
         <div id="ocene-filter-holder">
