@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     background: #f9f9f9;
+    min-width: 840px;
     font-family: 'Roboto', sans-serif;
 }
 #header-panel{
@@ -8,6 +9,7 @@ html, body {
     /*for Chrome:*/
     min-height: 64px;
     background: #2196F3;
+    min-width: 840px;
 }
 
 #toolbar {
@@ -19,7 +21,9 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 32px;
-    min-height: 830px;
+    min-width: 808px; /*min-heidht of other elements (840px) - (2 * padding on left/right side (16px)) = 808 */
+    padding-left: 16px;
+    padding-right: 16px;
 }
 #filter-holder {
     width: 100%;
