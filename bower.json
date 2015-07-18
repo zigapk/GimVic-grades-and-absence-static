@@ -23,6 +23,7 @@
     "paper-radio-button": "PolymerElements/paper-radio-button#~1.0.5",
     "google-chart": "GoogleWebComponents/google-chart#~1.0.2",
     "paper-dialog": "PolymerElements/paper-dialog#~1.0.1",
-    "neon-animation": "PolymerElements/neon-animation#~1.0.6"
+    "neon-animation": "PolymerElements/neon-animation#~1.0.6",
+    "paper-menu": "PolymerElements/paper-menu#~1.0.1"
   }
 }
