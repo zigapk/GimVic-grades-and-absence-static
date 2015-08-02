@@ -23,7 +23,7 @@
     <link rel="import" href="bower_components/paper-button/paper-button.html">
 
 </head>
-<body class="fullbleed layout vertical">
+<body class="fullbleed layout vertical" onload="onLoad()" onclick="refresh()">
 <paper-header-panel id="header-panel" class="flex">
     <paper-toolbar id="toolbar">
         <div id="title-holder">Vpliv izostankov na učni uspeh</div>
@@ -36,14 +36,7 @@
         <div id="date-filter-holder">
             <p class="p-center" id="date-indicator">Izbrano:</p>
             <table id="year-chooser-table">
-                <tr>
-                    <td><paper-button toggles raised active>2012/13</paper-button></td>
-                    <td><paper-button toggles raised active>2013/14</paper-button></td>
-                </tr>
-                <tr>
-                    <td><paper-button toggles raised active>2014/15</paper-button></td>
-                    <td><paper-button toggles raised active>2015/16</paper-button></td>
-                </tr>
+                <!--content set by js -->
             </table>
 
         </div>
@@ -57,33 +50,33 @@
         </div>
         <div id="letnik-filter-holder">
             <p class="filter-label">Letnik:</p><br>
-            <paper-checkbox class="filter-checkbox" id="grade-1" checked>1.</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="grade1" checked>1.</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" id="grade-2"checked>2.</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="grade2" checked>2.</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" id="grade-3" checked>3.</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="grade3" checked>3.</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" id="grade-4" checked>4.</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="grade4" checked>4.</paper-checkbox>
         </div>
         <div id="oddelek-filter-holder">
             <p class="filter-label">Oddelek:</p><br>
-            <paper-checkbox class="filter-checkbox" checked>A</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="classA" checked>A</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" checked>B</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="classB" checked>B</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" checked>C</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="classC" checked>C</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" checked>D</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="classD" checked>D</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" checked>E</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="classE" checked>E</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" checked>F</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="classF" checked>F</paper-checkbox>
         </div>
         <div id="spol-filter-holder">
             <p class="filter-label">Spol:</p><br>
-            <paper-checkbox class="filter-checkbox" id="male-checkbox" checked>Fantje</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="male" checked>Fantje</paper-checkbox>
             <br>
-            <paper-checkbox class="filter-checkbox" id="female-checkbox" checked>Dekleta</paper-checkbox>
+            <paper-checkbox class="filter-checkbox" id="female" checked>Dekleta</paper-checkbox>
         </div>
     </paper-material>
     <div id="display-holder">
@@ -96,18 +89,18 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td><p class="p-center" id="vzorec-cel-dijaki">744</p></td>
-                    <td><p class="p-center" id="vzorec-tren-dijaki">744</p></td>
+                    <td><p class="p-center" id="vzorec-cel-dijaki"></p></td>
+                    <td><p class="p-center" id="vzorec-tren-dijaki"></p></td>
                     <td><p class="p-center">dijakov</p></td>
                 </tr>
                 <tr>
-                    <td><p class="p-center" id="vzorec-cel-fantje">342</p></td>
-                    <td><p class="p-center" id="vzorec-tren-fantje">342</p></td>
+                    <td><p class="p-center" id="vzorec-cel-fantje"></p></td>
+                    <td><p class="p-center" id="vzorec-tren-fantje"></p></td>
                     <td><p class="p-center">fantov</p></td>
                 </tr>
                 <tr>
-                    <td><p class="p-center" id="vzorec-cel-dekleta">402</p></td>
-                    <td><p class="p-center" id="vzorec-tren-dekleta">402</p></td>
+                    <td><p class="p-center" id="vzorec-cel-dekleta"></p></td>
+                    <td><p class="p-center" id="vzorec-tren-dekleta"></p></td>
                     <td><p class="p-center">deklet</p></td>
                 </tr>
             </table>
@@ -117,27 +110,27 @@
             <table id="stats-holder-table">
                 <tr>
                     <td><p class="p-right">Povprečna ocena ali uspeh:</p></td>
-                    <td><p class="p-left" id="povp-uspeh">3.9</p></td>
+                    <td><p class="p-left" id="povp-uspeh"></p></td>
                 </tr>
                 <tr>
                     <td><p class="p-right">Povprečno število ur vseh izostankov:</p></td>
-                    <td><p class="p-left" id="povp-izostanki">120</p></td>
+                    <td><p class="p-left" id="povp-izostanki"></p></td>
                 </tr>
                 <tr>
                     <td><p class="p-right">Povprečno število opravičenih ur:</p></td>
-                    <td><p class="p-left" id="povp-opravicene">111.9</p></td>
+                    <td><p class="p-left" id="povp-opravicene"></p></td>
                 </tr>
                 <tr>
                     <td><p class="p-right">Povprečno število neopravičenih ur:</p></td>
-                    <td><p class="p-left" id="povp-neopravicene">2.3</p></td>
+                    <td><p class="p-left" id="povp-neopravicene"></p></td>
                 </tr>
                 <tr>
-                    <td><p class="p-right">Število dijakov z opravičenimi urami:</p></td>
-                    <td><p class="p-left" id="stevilo-z-opravicenimi">744</p></td>
+                    <td><p class="p-right">Delež dijakov z opravičenimi urami:</p></td>
+                    <td><p class="p-left" id="delez-opraviceni"></p></td>
                 </tr>
                 <tr>
-                    <td><p class="p-right">Število dijakov z neopravičenimi urami:</p></td>
-                    <td><p class="p-left" id="stevilo-z-neopravicenimi">337</p></td>
+                    <td><p class="p-right">Delež dijakov z neopravičenimi urami:</p></td>
+                    <td><p class="p-left" id="delez-neopraviceni"></p></td>
                 </tr>
             </table>
         </paper-material>
