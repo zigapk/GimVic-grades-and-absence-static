@@ -2,6 +2,7 @@
  * Created by zigapk on 7/17/15.
  */
 
+
 var filters = ["grade1", "grade2", "grade3", "grade4", "classA", "classB", "classC", "classD", "classE", "classF", "male", "female"];
 var years = [];
 var server = "localhost";
@@ -99,6 +100,28 @@ function generateURL(base) {
         url += "gradeType=final";
     }
     return url;
+}
+
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses'],
+        [2004,  1000,      400],
+        [2005,  1170,      460],
+        [2006,  660,       1120],
+        [2007,  1030,      540]
+    ]);
+
+    var options = {
+        curveType: 'function',
+        title: "Povezava med povprečno oceno in št. opravičenih ur",
+        hAxis: {title: "Povprečna ocena"},
+        vAxis: {title: "Št. opravičenih ur"},
+        legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('chart'));
+
+    chart.draw(data, options);
 }
 
 function httpGet(theUrl) {

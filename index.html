@@ -12,6 +12,14 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
 
     <link rel="import" href="bower_components/polymer/polymer.html">
     <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
@@ -137,16 +145,9 @@
 
     </div>
     <paper-material id="chart-holder" elevation="2">
-        <google-chart
-                id="chart"
-                type='pie'
-                options='{"title": "Distribution of days in 2001Q1"}'
-                cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
-                rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
-        </google-chart>
+        <div id="chart" class="chart"></div>
     </paper-material>
 </div>
-
 </div>
 
 

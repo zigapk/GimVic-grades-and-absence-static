@@ -103,6 +103,7 @@ paper-toggle-button {
     margin-top: 16px;
     width: 100%;
     margin-bottom: 64px;
+    padding: 16px;
 }
 #chart {
     height: 100%;
@@ -146,6 +147,13 @@ tr {
 .p-card-title {
     height: 18px;
     margin: 8px 0 0;
+}
+.chart {;
+    width: 90%;
+    height: 300px;
+    min-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*This will work for firefox*/
