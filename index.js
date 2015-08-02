@@ -58,7 +58,6 @@ function generateYearsHtml(){
             closed = true;
         }
     }
-
     if(!closed) {
         html += "</tr>";
     }
@@ -87,6 +86,17 @@ function generateURL(base) {
             url += id+"=false";
             endNeeded = true;
         }
+    }
+
+    //for radio buttons
+    if(endNeeded) {
+        url += "&";
+    }
+    endNeeded = true;
+    if($("#povprecni-uspeh").prop("checked")) {
+            url += "gradeType=average";
+    }else {
+        url += "gradeType=final";
     }
     return url;
 }
