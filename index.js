@@ -9,13 +9,23 @@ var server = "localhost";
 var port = 8080;
 
 function refresh(e) {
-    setTimeout(refreshFactsAndStats(), 500);    
+    setTimeout(refreshFactsAndStats(), 1);
+
+    var temp;
+    if ($("#povprecni-uspeh").prop("checked")) {
+        temp = "povprečno oceno";
+    } else {
+        temp = "končnim uspehom";
+    }
+
+        setTimeout(drawChart("chart_excusable", "excusable", "Povezava med "+temp+" in številom opravičenih ur"), 1);
+    setTimeout(drawChart("chart_inexcusable", "inexcusable", "Povezava med "+temp+" in številom neopravičenih ur"), 1);
 }
 
 function refreshFactsAndStats() {
-    var url = generateURL("http://"+server+":"+port+"/data");
+    var url = generateURL("http://" + server + ":" + port + "/data", []);
 
-    $.getJSON(url, function(data){
+    $.getJSON(url, function (data) {
         //facts
         $("#vzorec-cel-dijaki").text(data["Facts"]["AllStudents"]);
         $("#vzorec-tren-dijaki").text(data["Facts"]["CurrentStudents"]);
@@ -36,7 +46,7 @@ function refreshFactsAndStats() {
 
 function onLoad() {
     //get availible years
-    var yearsStr = httpGet("http://"+server+":"+port+"/years")
+    var yearsStr = httpGet("http://" + server + ":" + port + "/years")
     years = yearsStr.split(",");
 
     generateYearsHtml()
@@ -44,89 +54,99 @@ function onLoad() {
     refresh();
 }
 
-function generateYearsHtml(){
+function generateYearsHtml() {
     var html = "";
     var closed = true;
 
     for (var i = 0; i < years.length; i++) {
-        if(i%2 == 0) {
+        if (i % 2 == 0) {
             html += "<tr>";
             closed = false;
         }
         html += "<td><paper-button toggles raised active id='" + years[i] + "'>" + years[i].replace("-", "/") + "</paper-button></td>";
-        if(i%2 == 1) {
+        if (i % 2 == 1) {
             html += "</tr>";
             closed = true;
         }
     }
-    if(!closed) {
+    if (!closed) {
         html += "</tr>";
     }
 
     $("#year-chooser-table").html(html);
 }
 
-function generateURL(base) {
+function generateURL(base, optionalParameters) {
     var url = base + "?";
     var endNeeded = false;
 
     for (var id of filters) {
-        if(!$("#"+id).prop("checked")){
-            if(endNeeded) {
+        if (!$("#" + id).prop("checked")) {
+            if (endNeeded) {
                 url += "&";
             }
-            url += id+"=false";
+            url += id + "=false";
             endNeeded = true;
         }
     }
-    for (var id of years) {
-        if(!$("#"+id).prop("active")){
-            if(endNeeded) {
+    for (var id of years){
+        if (!$("#" + id).prop("active")) {
+            if (endNeeded) {
                 url += "&";
             }
-            url += id+"=false";
+            url += id + "=false";
             endNeeded = true;
         }
     }
 
+    for (var param of optionalParameters)    {
+        if (endNeeded) {
+            url += "&";
+        }
+        url += param;
+        endNeeded = true;
+    }
+
     //for radio buttons
-    if(endNeeded) {
+    if (endNeeded) {
         url += "&";
     }
     endNeeded = true;
-    if($("#povprecni-uspeh").prop("checked")) {
-            url += "gradeType=average";
-    }else {
+    if ($("#povprecni-uspeh").prop("checked")) {
+        url += "gradeType=average";
+    } else {
         url += "gradeType=final";
     }
     return url;
 }
 
-function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-        ['Year', 'Sales', 'Expenses'],
-        [2004,  1000,      400],
-        [2005,  1170,      460],
-        [2006,  660,       1120],
-        [2007,  1030,      540]
-    ]);
+function drawChart(chartID, absenceType, graphTitle) {
+    var tempUrl = generateURL("http://" + server + ":" + port + "/graph", ["absenceType="+absenceType]);
+    console.log(tempUrl)
+    var jsonData = $.ajax({
+        url: tempUrl,
+        dataType: "json",
+        async: false
+    }).responseText;
+
+    // Create our data table out of JSON data loaded from server.
+    var data = new google.visualization.DataTable(jsonData);
 
     var options = {
+        title: graphTitle,
         curveType: 'function',
-        title: "Povezava med povprečno oceno in št. opravičenih ur",
-        hAxis: {title: "Povprečna ocena"},
-        vAxis: {title: "Št. opravičenih ur"},
-        legend: { position: 'bottom' }
+        legend: {position: 'bottom'}
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('chart'));
-
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.LineChart(document.getElementById(chartID));
     chart.draw(data, options);
+
 }
 
 function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false );
-    xmlHttp.send( null );
+    xmlHttp.open("GET", theUrl, false);
+    xmlHttp.send(null);
     return xmlHttp.responseText;
 }
