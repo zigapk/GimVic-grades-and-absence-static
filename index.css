@@ -101,7 +101,7 @@ paper-toggle-button {
 }
 #chart-holder {
     margin-top: 16px;
-    width: 100%;
+    width: 96.5%;
     margin-bottom: 64px;
     padding: 16px;
 }
@@ -156,9 +156,15 @@ tr {
     margin-right: auto;
 }
 
-/*This will work for firefox*/
+/*for Firefox only*/
 @-moz-document url-prefix() {
     .toggle-label {
         margin-top: -16px;
+    }
+}
+/*for Chrome only*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .filter-checkbox-small {
+        margin-top: -10px;
     }
 }

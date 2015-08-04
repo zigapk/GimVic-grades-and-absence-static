@@ -17,8 +17,7 @@ function refresh(e) {
     } else {
         temp = "končnim uspehom";
     }
-
-        setTimeout(drawChart("chart_excusable", "excusable", "Povezava med "+temp+" in številom opravičenih ur"), 1);
+    setTimeout(drawChart("chart_excusable", "excusable", "Povezava med "+temp+" in številom opravičenih ur"), 1);
     setTimeout(drawChart("chart_inexcusable", "inexcusable", "Povezava med "+temp+" in številom neopravičenih ur"), 1);
 }
 
