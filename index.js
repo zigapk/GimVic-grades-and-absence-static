@@ -135,7 +135,8 @@ function drawChart(chartID, absenceType, graphTitle) {
     var options = {
         title: graphTitle,
         curveType: 'function',
-        legend: {position: 'bottom'}
+        legend: {position: 'bottom'},
+        backgroundColor: "#f9f9f9"
     };
 
     // Instantiate and draw our chart, passing in some options.
