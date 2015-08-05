@@ -5,8 +5,8 @@
 
 var filters = ["grade1", "grade2", "grade3", "grade4", "classA", "classB", "classC", "classD", "classE", "classF", "male", "female"];
 var years = [];
-var server = "localhost";
-var port = 8080;
+var server = "theccode.com";
+var port = 80;
 
 function refresh(e) {
     setTimeout(refreshFactsAndStats(), 1);
