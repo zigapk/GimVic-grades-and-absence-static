@@ -1,0 +1,34 @@
+Pozdravljeni,
+
+Zdaj sem že skoraj dokončal svoj projekt: http://zigapk.github.io/GimVic-grades-and-absence-static/. Podatki so ponekod še izmišljeni, ker pravih pač nimam. Od vas bi zdaj potreboval samo še storitev, ki bi podajala podatke, ki bi jih bilo relativno lahko spraviti v naslednjo MySQL tabelo:
+
+mysql> describe data;
++-------------+------------+------+-----+---------+----------------+
+| Field       | Type       | Null | Key | Default | Extra          |
++-------------+------------+------+-----+---------+----------------+
+| id          | int(11)    | NO   | PRI | NULL    | auto_increment |
+| gender      | varchar(1) | YES  |     | NULL    |                |
+| grade       | int(11)    | YES  |     | NULL    |                |
+| excusable   | int(11)    | YES  |     | NULL    |                |
+| inexcusable | int(11)    | YES  |     | NULL    |                |
+| average     | float      | YES  |     | NULL    |                |
+| final       | int(11)    | YES  |     | NULL    |                |
+| year        | varchar(7) | YES  |     | NULL    |                |
+| class       | varchar(1) | YES  |     | NULL    |                |
++-------------+------------+------+-----+---------+----------------+
+9 rows in set (0.01 sec)
+
+mysql> select * from data where id<4
+    -> ;
++----+--------+-------+-----------+-------------+---------+-------+---------+-------+
+| id | gender | grade | excusable | inexcusable | average | final | year    | class |
++----+--------+-------+-----------+-------------+---------+-------+---------+-------+
+|  1 | Z      |     3 |       131 |           0 |    2.91 |     1 | 2014-15 | A     |
+|  2 | M      |     1 |        77 |           0 |    4.62 |     5 | 2013-14 | B     |
+|  3 | Z      |     3 |       368 |           0 |    4.55 |     5 | 2013-14 | C     |
++----+--------+-------+-----------+-------------+---------+-------+---------+-------+
+3 rows in set (0.00 sec)
+
+Kako in kdaj okvirno bi se dalo narediti kaj na to temo?
+
+Hvala in lp, Žiga Patačko K.
